@@ -1,5 +1,7 @@
 import express from 'express';
+
 import ScrapController from './controllers/scrapController.js';
+
 const app = express();
 
 app.set("view engine", "pug");
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 app.get('/scrap', (req, res) => {
     res.render('scrap',{data:[]});
     });
- 
+    
 app.post('/scrap', async (req, res) => {
     const scrapController = new ScrapController();
     await scrapController.init();
@@ -28,8 +30,7 @@ app.post('/scrap', async (req, res) => {
     res.render("scrap",{data:content});
     }
 );
-
 app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+    console.log('Example app listening on port 3003!');
     }
 );
