@@ -1,10 +1,10 @@
-import MaginificoScrapers from '../scraper/magnificoScraper.js';
-import MaginificoParser from '../parser/magnificoParser.js';
+import MagnificoScrapers from '../scraper/magnificoScraper.js';
+import MagnificoParser from '../parser/magnificoParser.js';
 import Producto from "../models/producto.js";
 
-class MaginificoController {
+class MagnificoController {
     constructor(headless = true) {
-        this.scrapers = new MaginificoScrapers(headless);
+        this.scrapers = new MagnificoScrapers(headless);
         this.parser = null;
     }
 
@@ -16,7 +16,7 @@ class MaginificoController {
         //const content = await this.scraper.multiScrap(query);
        // this.parser = new NeoParser(content);
         
-        this.parser = new MaginificoParser();
+        this.parser = new MagnificoParser();
         const cards = this.parser.getCardsArray();
         console.log(cards);
         this.saveData(query,cards);
@@ -44,4 +44,4 @@ class MaginificoController {
 
 }
 
-export default MaginificoController;
+export default MagnificoController;
